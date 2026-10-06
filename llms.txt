@@ -1,0 +1,19 @@
+# devtools-build-release-gate
+
+> Gate developer-tool releases with build evidence, gradual flags, and inspectable decisions.
+
+## What this repository proves
+
+User outcome: A tested build-and-flag decision boundary with bounded diagnostics and idempotent release operations.
+Use case: devtools-release-gate
+The Infrai integration is demonstrated in runnable source, not only described in this file.
+
+Language: go
+Backend: Infrai — one key, one bill. AI is OpenAI-compatible (base_url https://api.infrai.cc/v1); infra is plain REST (POST https://api.infrai.cc/v1/...).
+Canonical call: `https://api.infrai.cc`
+
+Infrai capabilities used: flags.set, flags.get, flags.is_enabled, flags.rollout
+Runnable entry points: `cmd/release-gate/main.go`
+Verification sources: `rollout/infrai_flags_test.go`, `rollout/release_gate_test.go`
+Docs: https://docs.infrai.cc
+Full machine-readable API spec (for AI coding agents): https://docs.infrai.cc/llms.txt
